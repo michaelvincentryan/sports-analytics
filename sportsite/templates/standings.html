@@ -1,0 +1,87 @@
+<html>
+
+<head>
+  <title>NBA Standings</title>
+</head>
+
+<body>
+  {% include "nav.html" %}
+
+  <div>Standings</div>
+
+  <table>
+    <tr>
+      <th>Eastern</th>
+      <th>W</th>
+      <th>L</th>
+      <th>PCT</th>
+      <th>GB</th>
+      <th>HOME</th>
+      <th>ROAD</th>
+      <th>DIV</th>
+      <th>CONF</th>
+      <th>PPG</th>
+      <th>OPP PPG</th>
+      <th>DIFF</th>
+      <th>STREAK</th>
+      <th>L10</th>
+    </tr>
+
+    {% for standing in eastern_standings%}
+    <tr>
+      <td><a href="{% url 'team' standing.team.nickname %}">{{standing.team.name}} {{standing.team.nickname}}</a></td>
+      <td>{{standing.wins}}</td>
+      <td>{{standing.losses}}</td>
+      <td>{{standing.pct}}</td>
+      <td>{{standing.gb}}</td>
+      <td>{{standing.home_wins}}-{{standing.home_losses}}</td>
+      <td>{{standing.road_wins}}-{{standing.road_losses}}</td>
+      <td>{{standing.division_wins}}-{{standing.division_losses}}</td>
+      <td>{{standing.conference_wins}}-{{standing.conference_losses}}</td>
+      <td>{{standing.ppg}}</td>
+      <td>{{standing.opp_ppg}}</td>
+      <td>{{standing.pt_diff}}</td>
+      <td>{{standing.win_streak}}</td>
+      <td>{{standing.last_10_wins}}-{{standing.last_10_losses}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th>Western</th>
+      <th>W</th>
+      <th>L</th>
+      <th>PCT</th>
+      <th>GB</th>
+      <th>HOME</th>
+      <th>ROAD</th>
+      <th>DIV</th>
+      <th>CONF</th>
+      <th>PPG</th>
+      <th>OPP PPG</th>
+      <th>DIFF</th>
+      <th>STREAK</th>
+      <th>L10</th>
+    </tr>
+
+    {% for standing in western_standings%}
+    <tr>
+      <td><a href="{% url 'team' standing.team.nickname %}">{{standing.team.name}} {{standing.team.nickname}}</a></td>
+      <td>{{standing.wins}}</td>
+      <td>{{standing.losses}}</td>
+      <td>{{standing.pct}}</td>
+      <td>{{standing.gb}}</td>
+      <td>{{standing.home_wins}}-{{standing.home_losses}}</td>
+      <td>{{standing.road_wins}}-{{standing.road_losses}}</td>
+      <td>{{standing.division_wins}}-{{standing.division_losses}}</td>
+      <td>{{standing.conference_wins}}-{{standing.conference_losses}}</td>
+      <td>{{standing.ppg}}</td>
+      <td>{{standing.opp_ppg}}</td>
+      <td>{{standing.pt_diff}}</td>
+      <td>{{standing.win_streak}}</td>
+      <td>{{standing.last_10_wins}}-{{standing.last_10_losses}}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+</body>
+
+</html>

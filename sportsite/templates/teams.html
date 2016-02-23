@@ -1,0 +1,15 @@
+<html>
+
+<head>
+  <title>Teams</title>
+</head>
+
+<body>
+  {% include "nav.html" %}
+
+  {% for team in teams %}
+    <div><a href="{% url 'team' team.nickname %}">{{team.nickname}}</a></div>
+  {% endfor %}
+</body>
+
+</html>
