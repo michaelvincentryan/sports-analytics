@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
+import nba
 
 urlpatterns = [
     #url(r'^', include('nba.urls')),
     url(r'^nba/', include('nba.urls')),
     url(r'^admin/', admin.site.urls),
-    #url(r'^', admin.site.urls),
+    url(r'^', nba.views.index, name='index'),
 ]

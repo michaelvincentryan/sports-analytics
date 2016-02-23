@@ -5,9 +5,11 @@ import datetime
 # Create your views here.
 #from django.http import HttpResponse
 
+def index(request):
+    return render(request, 'index.html')
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'nba_home.html')
 
 def teams(request):
     teams = Team.objects.all().order_by('-division__conference','division')
